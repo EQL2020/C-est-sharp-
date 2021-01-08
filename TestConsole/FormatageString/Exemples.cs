@@ -5,7 +5,6 @@ namespace FormatageString
     public class Exemples
     {
         // Champs
-
         private int longueur;
         private DateTime dateCreation;
         public static int nbExemples = 0;
