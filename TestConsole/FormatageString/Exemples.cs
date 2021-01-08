@@ -82,15 +82,15 @@ namespace FormatageString
             
             if (a == b)
             {
-                Console.WriteLine(String.Format("Vrai : a = b (avec a = {0} et b = {b})", a, b));
+                Console.WriteLine(String.Format("Vrai : a = b (avec a = {0} et b = {1})", a, b));
             }
             else
             {
-                Console.WriteLine(String.Format("Faux : a <> b (avec a = {0} et b = {b})", a, b));
+                Console.WriteLine(String.Format("Faux : a <> b (avec a = {0} et b = {1})", a, b));
             }
 
-            if (a == b) Console.WriteLine(String.Format("Vrai : a = b (avec a = {0} et b = {b})", a, b));
-            else Console.WriteLine(String.Format("Faux : a <> b (avec a = {0} et b = {b})", a, b));
+            if (a == b) Console.WriteLine(String.Format("Vrai : a = b (avec a = {0} et b = {1})", a, b));
+            else Console.WriteLine(String.Format("Faux : a <> b (avec a = {0} et b = {1})", a, b));
         }
 
         public static void TestSwitch()
