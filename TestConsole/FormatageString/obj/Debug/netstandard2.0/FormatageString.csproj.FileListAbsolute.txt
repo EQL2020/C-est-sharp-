@@ -1,0 +1,9 @@
+C:\Users\sdupuy\source\repos\TestConsole\FormatageString\bin\Debug\netstandard2.0\FormatageString.deps.json
+C:\Users\sdupuy\source\repos\TestConsole\FormatageString\bin\Debug\netstandard2.0\FormatageString.dll
+C:\Users\sdupuy\source\repos\TestConsole\FormatageString\bin\Debug\netstandard2.0\FormatageString.pdb
+C:\Users\sdupuy\source\repos\TestConsole\FormatageString\obj\Debug\netstandard2.0\FormatageString.AssemblyInfoInputs.cache
+C:\Users\sdupuy\source\repos\TestConsole\FormatageString\obj\Debug\netstandard2.0\FormatageString.AssemblyInfo.cs
+C:\Users\sdupuy\source\repos\TestConsole\FormatageString\obj\Debug\netstandard2.0\FormatageString.csproj.CoreCompileInputs.cache
+C:\Users\sdupuy\source\repos\TestConsole\FormatageString\obj\Debug\netstandard2.0\FormatageString.dll
+C:\Users\sdupuy\source\repos\TestConsole\FormatageString\obj\Debug\netstandard2.0\FormatageString.pdb
+C:\Users\sdupuy\source\repos\TestConsole\FormatageString\obj\Debug\netstandard2.0\FormatageString.csprojAssemblyReference.cache

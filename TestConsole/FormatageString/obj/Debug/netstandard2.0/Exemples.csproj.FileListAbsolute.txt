@@ -1,0 +1,9 @@
+C:\Users\sdupuy\source\repos\TestConsole\FormatageString\bin\Debug\netstandard2.0\Exemples.deps.json
+C:\Users\sdupuy\source\repos\TestConsole\FormatageString\bin\Debug\netstandard2.0\Exemples.dll
+C:\Users\sdupuy\source\repos\TestConsole\FormatageString\bin\Debug\netstandard2.0\Exemples.pdb
+C:\Users\sdupuy\source\repos\TestConsole\FormatageString\obj\Debug\netstandard2.0\Exemples.csprojAssemblyReference.cache
+C:\Users\sdupuy\source\repos\TestConsole\FormatageString\obj\Debug\netstandard2.0\Exemples.AssemblyInfoInputs.cache
+C:\Users\sdupuy\source\repos\TestConsole\FormatageString\obj\Debug\netstandard2.0\Exemples.AssemblyInfo.cs
+C:\Users\sdupuy\source\repos\TestConsole\FormatageString\obj\Debug\netstandard2.0\Exemples.csproj.CoreCompileInputs.cache
+C:\Users\sdupuy\source\repos\TestConsole\FormatageString\obj\Debug\netstandard2.0\Exemples.dll
+C:\Users\sdupuy\source\repos\TestConsole\FormatageString\obj\Debug\netstandard2.0\Exemples.pdb

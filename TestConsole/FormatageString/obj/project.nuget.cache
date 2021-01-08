@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "n1VOSZHE5eSN8Ui3ftL7cl4Q1g6IzHeB3bAV9DdhruacL2hnn2wh8TLNEeKkkJwcsCqZoMmTWqvhljAK+Kmw/A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sdupuy\\source\\repos\\EQL2020\\Cecharpe-Repository\\TestConsole\\FormatageString\\FormatageString.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sdupuy\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\sdupuy\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
