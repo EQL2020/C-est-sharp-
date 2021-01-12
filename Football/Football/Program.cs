@@ -55,6 +55,7 @@ namespace Football
             psg.Add(new Joueur(15, "Maradona", "attaquant"));
             psg.Add(new Joueur(10, "Zidane", "attaquant"));
             psg.Add(new Joueur(7, "Lloris", "gardien"));
+            psg.Add(new Joueur(1, "Deschamps", "attaquant"));
 
             List<Joueur> mesAttaquants = psg.Where(j => j.Poste == "attaquant").ToList<Joueur>();
             int nbGardiens = psg.Where(j => j.Poste == "gardien").Count();
@@ -83,6 +84,23 @@ namespace Football
                                       where joueur.Poste == "attaquant"
                                       orderby joueur.Numero
                                       select joueur).ToList();
+
+            // Cumul de critères
+            List<Joueur> mesAttaquantsAvecE = psg.Where(j => j.Poste == "attaquant").Where(joueur => joueur.Nom.Contains("e")).OrderBy(jj => jj.Numero).ToList();
+
+            mesAttaquantsAvecE = (from jj in psg
+                                  where jj.Poste == "attaquant" && jj.Nom.Contains("e")
+                                  orderby jj.Numero descending
+                                  select jj).ToList();
+
+            List<Joueur> desAttaquantsOuNomAvecS = (from e in psg
+                                                    where e.Poste == "attaquant" || e.Nom.Contains("s")
+                                                    orderby e.Numero
+                                                    select e).ToList();
+            List<Joueur> desAttaquantsEtNomAvecS = (from e in psg
+                                                    where e.Poste == "attaquant" && e.Nom.Contains("s")
+                                                    orderby e.Numero
+                                                    select e).ToList();
         }
 
         static void Main(string[] args)
