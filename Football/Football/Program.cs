@@ -47,9 +47,6 @@ namespace Football
             // Test conflit GIT
             bool monTest = false; // ligne rajoutée depuis GitHub
 
-            // test conflit GIT
-            bool monTest = true; // ligne rajoutée depuis Visual Studio
-
         }
 
         static void ExempleLinq()
