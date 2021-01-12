@@ -44,9 +44,6 @@ namespace Football
             // Test ajout code GitHub
             psg[2] = new Joueur(15, "Stéphane", "prof");
             
-            // Test conflit GIT
-            bool monTest = false; // ligne rajoutée depuis GitHub
-
             // test conflit GIT
             bool monTest = true; // ligne rajoutée depuis Visual Studio
 
