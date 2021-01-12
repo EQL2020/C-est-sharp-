@@ -40,6 +40,9 @@ namespace Football
 
             // Remplacer mon 2ème achat
             psg[1] = new Joueur(11, "Ronaldo", "défenseur");
+            
+            // Test ajout code GitHub
+            psg[2] = new Joueur(15, "Stéphane", "prof");
 
         }
 
