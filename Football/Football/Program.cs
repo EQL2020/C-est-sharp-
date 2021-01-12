@@ -45,7 +45,7 @@ namespace Football
             psg[2] = new Joueur(15, "Stéphane", "prof");
             
             // test conflit GIT
-            bool monTest = true; // ligne rajoutée depuis Visual Studio
+            bool monTest = true; // ligne modifiée manuellement depuis Visual Studio
 
         }
 
