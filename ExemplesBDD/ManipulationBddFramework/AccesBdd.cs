@@ -75,6 +75,7 @@ namespace ManipulationBddFramework
             cmd.CommandType = System.Data.CommandType.Text;
             SqlDataReader resultat = cmd.ExecuteReader();
             // traitement resultat... voir méthode LireMaTable()
+            resultat.Close();
             this.FermetureBDD();
         }
 
@@ -92,8 +93,9 @@ namespace ManipulationBddFramework
             while (resultat.Read())
             {
                 Console.WriteLine("Num Client : {0} - Nom : {1} - Adresse : {2} - Région : {3}",
-                    resultat.GetInt32(0), resultat.GetString(1), resultat.GetString(2), resultat.GetInt32(3));
+                    (int)resultat["noclient"], (string)resultat["nom"], (string)resultat["adresse"], (int)resultat["noregion"]);
             }
+            resultat.Close();
             this.FermetureBDD();
         }
 
@@ -134,20 +136,46 @@ namespace ManipulationBddFramework
                 }
                 Console.WriteLine("");
             }
+            resultat.Close();
             this.FermetureBDD();
+        }
+
+        int RecupDernierNumCli()
+        {
+            int num;
+            SqlCommand cmd = new SqlCommand("SELECT MAX(noclient) FROM client", this.cnx);
+            this.OuvreConnection();
+            num = (int)cmd.ExecuteScalar();
+            this.FermetureBDD();
+            return num;
         }
 
         public void InsererNouveauClient(Client monNouveauClient)
         {
+            int nouveauNumCli = RecupDernierNumCli();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = this.cnx;
+            
             string requete = String.Format("INSERT INTO client (noclient, nom, adresse, noregion) VALUES ({0}, '{1}', '{2}', {3})",
-                "0",
+                ++nouveauNumCli,
                 monNouveauClient.Nom,
                 monNouveauClient.Adresse,
                 monNouveauClient.NumRegion.ToString());
             cmd.CommandText = requete;
             this.OuvreConnection();
+            int nbLigneAffectees = cmd.ExecuteNonQuery();
+            this.FermetureBDD();
+        }
+
+        public void MajAdresseCli(Client monClientModifie)
+        {
+            SqlCommand cmd = new SqlCommand();
+            this.OuvreConnection();
+            string requete = String.Format("UPDATE client SET adresse = '{0}' WHERE noclient = @NoClient", monClientModifie.Adresse);
+            SqlParameter pNoCli = new SqlParameter("@NoClient", monClientModifie.NoClient);
+            cmd.Connection = this.cnx;
+            cmd.CommandText = requete;
+            cmd.Parameters.Add(pNoCli);
             int nbLigneAffectees = cmd.ExecuteNonQuery();
             this.FermetureBDD();
         }

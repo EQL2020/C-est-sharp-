@@ -12,6 +12,8 @@ namespace LibrairieClient
         string adresse;
         int numRegion;
 
+        public int NoClient { get; set; }
+
         public string Nom
         {
             get { return this.nom; }
@@ -32,6 +34,14 @@ namespace LibrairieClient
             this.nom = nom;
             this.adresse = adresse;
             this.numRegion = numRegion;
+        }
+
+        public Client(int no, string nom, string adr, int reg)
+        {
+            this.NoClient = no;
+            this.nom = nom;
+            this.adresse = adr;
+            this.numRegion = reg;
         }
     }
 }

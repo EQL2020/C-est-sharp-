@@ -18,9 +18,9 @@ namespace ConsoleTestBDD
             Console.WriteLine("Mon 1er client est : " + monClient);
             //testConnexion.LireClients();
             testConnexion.LireUneTable("client");
-            Console.WriteLine("insertion en cours...");
-            Client monNouveauClient = new Client("Maradona", "1 chemin Argentin", 3);
-            testConnexion.InsererNouveauClient(monNouveauClient);
+            Console.WriteLine("MAJ en cours...");
+            Client monNouveauClient = new Client(11, "COCO", "1 boulevard Argentin", 3);
+            testConnexion.MajAdresseCli(monNouveauClient);
             testConnexion.LireUneTable("client");
             string entree = Console.ReadLine();
         }
