@@ -70,5 +70,11 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibrairieClient\LibrairieClient.csproj">
+      <Project>{aa94fccc-a375-42a2-bc25-5715035daf5e}</Project>
+      <Name>LibrairieClient</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

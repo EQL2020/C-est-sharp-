@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
+using LibrairieClient;
 
 namespace ManipulationBddFramework
 {
@@ -53,7 +54,7 @@ namespace ManipulationBddFramework
         {
             string nomClient;
             string requeteSQL = "SELECT TOP (1) nom FROM client";
-            requeteSQL = "SELECT COUNT(*) FROM client";
+            //requeteSQL = "SELECT COUNT(*) FROM client";
             SqlCommand cmd = new SqlCommand();
             this.OuvreConnection();
             cmd.Connection = this.cnx;
@@ -133,6 +134,21 @@ namespace ManipulationBddFramework
                 }
                 Console.WriteLine("");
             }
+            this.FermetureBDD();
+        }
+
+        public void InsererNouveauClient(Client monNouveauClient)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = this.cnx;
+            string requete = String.Format("INSERT INTO client (noclient, nom, adresse, noregion) VALUES ({0}, '{1}', '{2}', {3})",
+                "0",
+                monNouveauClient.Nom,
+                monNouveauClient.Adresse,
+                monNouveauClient.NumRegion.ToString());
+            cmd.CommandText = requete;
+            this.OuvreConnection();
+            int nbLigneAffectees = cmd.ExecuteNonQuery();
             this.FermetureBDD();
         }
 
