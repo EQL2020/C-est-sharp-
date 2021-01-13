@@ -12,10 +12,13 @@ namespace ConsoleTestBDD
         static void Main(string[] args)
         {
             AccesBdd testConnexion = new AccesBdd();
-            testConnexion.OuvreConnection();
+      
             string monClient = testConnexion.GetPremierClient();
             Console.WriteLine("Mon 1er client est : " + monClient);
-            testConnexion.FermetureBDD();
+            //testConnexion.LireClients();
+            testConnexion.LireUneTable("client");
+
+            string entree = Console.ReadLine();
         }
     }
 }
