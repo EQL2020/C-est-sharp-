@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using LibrairieClient;
 
@@ -180,5 +181,42 @@ namespace ManipulationBddFramework
             this.FermetureBDD();
         }
 
+        void AfficherTable(DataTable dt)
+        {
+            foreach (DataRow dr in dt.Rows)
+            {
+                Console.WriteLine("{0}\t{1}\t{2}", dr["noclient"].ToString(), dr["nom"].ToString(), dr["adresse"].ToString());
+            }
+        }
+
+        public void NouveauDatasetClient()
+        {
+            this.OuvreConnection();
+            SqlDataAdapter ad = new SqlDataAdapter();
+            ad.SelectCommand = new SqlCommand("SELECT noclient, nom, adresse, noregion FROM client", this.cnx);
+            DataSet monDataSet = new DataSet();
+            ad.Fill(monDataSet, "toto");
+
+            DataTable maTableCli = monDataSet.Tables["toto"];
+
+            // INSERT
+            DataRow dr = monDataSet.Tables["toto"].NewRow();
+            dr["noclient"] = 15;
+            dr["nom"] = "Lloris";
+            dr["adresse"] = "impasse du foot";
+            dr["noregion"] = 9;
+            monDataSet.Tables["toto"].Rows.Add(dr);
+
+            // UPDATE
+            DataRow drModif = monDataSet.Tables["toto"].Rows[1];
+            drModif.BeginEdit();
+            drModif["nom"] = "Stephane";
+            drModif.EndEdit();
+
+            // DELETE
+            monDataSet.Tables["toto"].Rows[3].Delete();
+
+            monDataSet.WriteXml(@"toto.xml");
+        }
     }
 }

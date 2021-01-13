@@ -15,13 +15,14 @@ namespace ConsoleTestBDD
             AccesBdd testConnexion = new AccesBdd();
       
             string monClient = testConnexion.GetPremierClient();
-            Console.WriteLine("Mon 1er client est : " + monClient);
+            //Console.WriteLine("Mon 1er client est : " + monClient);
             //testConnexion.LireClients();
-            testConnexion.LireUneTable("client");
-            Console.WriteLine("MAJ en cours...");
-            Client monNouveauClient = new Client(11, "COCO", "1 boulevard Argentin", 3);
-            testConnexion.MajAdresseCli(monNouveauClient);
-            testConnexion.LireUneTable("client");
+            //testConnexion.LireUneTable("client");
+            //Console.WriteLine("MAJ en cours...");
+            //Client monNouveauClient = new Client(11, "COCO", "1 boulevard Argentin", 3);
+            //testConnexion.MajAdresseCli(monNouveauClient);
+            //testConnexion.LireUneTable("client");
+            testConnexion.NouveauDatasetClient();
             string entree = Console.ReadLine();
         }
     }
