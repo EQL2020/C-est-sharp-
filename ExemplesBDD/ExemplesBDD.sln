@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManipulationBDDCore", "Mani
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrairieClient", "LibrairieClient\LibrairieClient.csproj", "{AA94FCCC-A375-42A2-BC25-5715035DAF5E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManipulationEF", "ManipulationEF\ManipulationEF.csproj", "{75D66E0E-765D-43E8-ADC3-3A724F16E96F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{AA94FCCC-A375-42A2-BC25-5715035DAF5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA94FCCC-A375-42A2-BC25-5715035DAF5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA94FCCC-A375-42A2-BC25-5715035DAF5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75D66E0E-765D-43E8-ADC3-3A724F16E96F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75D66E0E-765D-43E8-ADC3-3A724F16E96F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75D66E0E-765D-43E8-ADC3-3A724F16E96F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75D66E0E-765D-43E8-ADC3-3A724F16E96F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

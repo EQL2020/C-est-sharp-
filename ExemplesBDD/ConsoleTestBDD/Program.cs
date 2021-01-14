@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ManipulationBddFramework;
 using LibrairieClient;
+using ManipulationEF;
 
 namespace ConsoleTestBDD
 {
@@ -23,10 +24,17 @@ namespace ConsoleTestBDD
             //testConnexion.MajAdresseCli(monNouveauClient);
             //testConnexion.LireUneTable("client");
             //testConnexion.NouveauDatasetClient();
-            Client test = new Client(21, "Patrick", "Bordeaux", 33);
+            
+            Client test = new Client();
+            test.LireDonnees("Maradona");
             test.LectureDonnees();
-            test.EnregistrerModif();
+            //test.NumRegion = 1;
+            //test.EnregistrerModif();
+            test.SupprimerEnBase();
             test.LectureDonnees();
+            
+            //AccessBddEF ef = new AccessBddEF();
+            //ef.GetNomAndRegionFromBdd();
             string entree = Console.ReadLine();
         }
     }

@@ -60,6 +60,19 @@ namespace LibrairieClient
             }
         }
 
+        public void LireDonnees(string nomClient)
+        {
+            using (ClientLinqDataContext dc = new ClientLinqDataContext())
+            {
+                var req = from cli in dc.client where cli.nom == nomClient select cli;
+                client cliBdd = req.FirstOrDefault();
+                this.nom = cliBdd.nom;
+                this.NoClient = cliBdd.noclient;
+                this.adresse = cliBdd.adresse;
+                this.numRegion = cliBdd.noregion??0; // si mon objet à gauche est null, je retourne ma valeur à droite
+            }
+        }
+
         public void AjouterLeClient()
         {
             using (ClientLinqDataContext dc = new ClientLinqDataContext())
@@ -86,6 +99,18 @@ namespace LibrairieClient
                 cliBdd.noregion = this.numRegion;
                 dc.SubmitChanges();
             }
+        }
+
+        public void SupprimerEnBase()
+        {
+            using (ClientLinqDataContext dc = new ClientLinqDataContext())
+            {
+                var req = from cli in dc.client where cli.noclient == this.NoClient select cli;
+                client cliBdd = req.FirstOrDefault();
+                dc.client.DeleteOnSubmit(cliBdd);
+                dc.SubmitChanges();
+            }
+            
         }
     }
 }

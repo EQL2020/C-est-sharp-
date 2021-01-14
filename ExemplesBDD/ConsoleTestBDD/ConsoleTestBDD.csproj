@@ -58,6 +58,10 @@
       <Project>{b91ecb8a-cbb8-4ddc-ba8c-77de358a7243}</Project>
       <Name>ManipulationBddFramework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ManipulationEF\ManipulationEF.csproj">
+      <Project>{75d66e0e-765d-43e8-adc3-3a724f16e96f}</Project>
+      <Name>ManipulationEF</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
