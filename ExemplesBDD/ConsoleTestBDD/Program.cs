@@ -22,7 +22,11 @@ namespace ConsoleTestBDD
             //Client monNouveauClient = new Client(11, "COCO", "1 boulevard Argentin", 3);
             //testConnexion.MajAdresseCli(monNouveauClient);
             //testConnexion.LireUneTable("client");
-            testConnexion.NouveauDatasetClient();
+            //testConnexion.NouveauDatasetClient();
+            Client test = new Client(21, "Patrick", "Bordeaux", 33);
+            test.LectureDonnees();
+            test.EnregistrerModif();
+            test.LectureDonnees();
             string entree = Console.ReadLine();
         }
     }

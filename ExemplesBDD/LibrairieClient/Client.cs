@@ -29,6 +29,10 @@ namespace LibrairieClient
             get { return this.numRegion; }
             set { this.numRegion = value; }
         }
+        public Client()
+        {
+
+        }
         public Client (string nom, string adresse, int numRegion)
         {
             this.nom = nom;
@@ -42,6 +46,46 @@ namespace LibrairieClient
             this.nom = nom;
             this.adresse = adr;
             this.numRegion = reg;
+        }
+
+        public void LectureDonnees()
+        {
+            using (ClientLinqDataContext dc = new ClientLinqDataContext())
+            {
+                foreach (client cli in dc.client)
+                {
+                    Console.WriteLine("{0} - {1} - {2} - {3} ", cli.noclient, cli.nom, cli.adresse, cli.noregion);
+                }
+                Console.WriteLine("--");
+            }
+        }
+
+        public void AjouterLeClient()
+        {
+            using (ClientLinqDataContext dc = new ClientLinqDataContext())
+            {
+                client cliBdd = new client();
+                cliBdd.noclient = this.NoClient;
+                cliBdd.nom = this.nom;
+                cliBdd.adresse = this.adresse;
+                cliBdd.noregion = this.numRegion;
+                //client cliBdd2 = new client { noclient = this.NoClient, nom = this.nom, adresse = this.adresse, noregion = this.numRegion };
+                dc.client.InsertOnSubmit(cliBdd);
+                dc.SubmitChanges();
+            }
+        }
+
+        public void EnregistrerModif()
+        {
+            using (ClientLinqDataContext dc = new ClientLinqDataContext())
+            {
+                var req = from cli in dc.client where cli.noclient == this.NoClient select cli;
+                client cliBdd = req.FirstOrDefault();
+                cliBdd.nom = this.nom;
+                cliBdd.adresse = this.adresse;
+                cliBdd.noregion = this.numRegion;
+                dc.SubmitChanges();
+            }
         }
     }
 }
