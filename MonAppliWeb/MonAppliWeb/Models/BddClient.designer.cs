@@ -30,12 +30,6 @@ namespace MonAppliWeb.Models
 		
     #region Définitions de méthodes d'extensibilité
     partial void OnCreated();
-    partial void Insertclient(client instance);
-    partial void Updateclient(client instance);
-    partial void Deleteclient(client instance);
-    partial void Insertregion(region instance);
-    partial void Updateregion(region instance);
-    partial void Deleteregion(region instance);
     #endregion
 		
 		public BddClientDataContext() : 
@@ -68,28 +62,18 @@ namespace MonAppliWeb.Models
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<client> client
+		public System.Data.Linq.Table<clientregion> clientregion
 		{
 			get
 			{
-				return this.GetTable<client>();
-			}
-		}
-		
-		public System.Data.Linq.Table<region> region
-		{
-			get
-			{
-				return this.GetTable<region>();
+				return this.GetTable<clientregion>();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.client")]
-	public partial class client : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.clientregion")]
+	public partial class clientregion
 	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _noclient;
 		
@@ -97,28 +81,13 @@ namespace MonAppliWeb.Models
 		
 		private string _adresse;
 		
-		private System.Nullable<int> _noregion;
+		private string _nomregion;
 		
-    #region Définitions de méthodes d'extensibilité
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnnoclientChanging(int value);
-    partial void OnnoclientChanged();
-    partial void OnnomChanging(string value);
-    partial void OnnomChanged();
-    partial void OnadresseChanging(string value);
-    partial void OnadresseChanged();
-    partial void OnnoregionChanging(System.Nullable<int> value);
-    partial void OnnoregionChanged();
-    #endregion
-		
-		public client()
+		public clientregion()
 		{
-			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_noclient", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_noclient", DbType="Int NOT NULL")]
 		public int noclient
 		{
 			get
@@ -129,11 +98,7 @@ namespace MonAppliWeb.Models
 			{
 				if ((this._noclient != value))
 				{
-					this.OnnoclientChanging(value);
-					this.SendPropertyChanging();
 					this._noclient = value;
-					this.SendPropertyChanged("noclient");
-					this.OnnoclientChanged();
 				}
 			}
 		}
@@ -149,11 +114,7 @@ namespace MonAppliWeb.Models
 			{
 				if ((this._nom != value))
 				{
-					this.OnnomChanging(value);
-					this.SendPropertyChanging();
 					this._nom = value;
-					this.SendPropertyChanged("nom");
-					this.OnnomChanged();
 				}
 			}
 		}
@@ -169,97 +130,7 @@ namespace MonAppliWeb.Models
 			{
 				if ((this._adresse != value))
 				{
-					this.OnadresseChanging(value);
-					this.SendPropertyChanging();
 					this._adresse = value;
-					this.SendPropertyChanged("adresse");
-					this.OnadresseChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_noregion", DbType="Int")]
-		public System.Nullable<int> noregion
-		{
-			get
-			{
-				return this._noregion;
-			}
-			set
-			{
-				if ((this._noregion != value))
-				{
-					this.OnnoregionChanging(value);
-					this.SendPropertyChanging();
-					this._noregion = value;
-					this.SendPropertyChanged("noregion");
-					this.OnnoregionChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.region")]
-	public partial class region : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _idregion;
-		
-		private string _nomregion;
-		
-    #region Définitions de méthodes d'extensibilité
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidregionChanging(int value);
-    partial void OnidregionChanged();
-    partial void OnnomregionChanging(string value);
-    partial void OnnomregionChanged();
-    #endregion
-		
-		public region()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idregion", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int idregion
-		{
-			get
-			{
-				return this._idregion;
-			}
-			set
-			{
-				if ((this._idregion != value))
-				{
-					this.OnidregionChanging(value);
-					this.SendPropertyChanging();
-					this._idregion = value;
-					this.SendPropertyChanged("idregion");
-					this.OnidregionChanged();
 				}
 			}
 		}
@@ -275,32 +146,8 @@ namespace MonAppliWeb.Models
 			{
 				if ((this._nomregion != value))
 				{
-					this.OnnomregionChanging(value);
-					this.SendPropertyChanging();
 					this._nomregion = value;
-					this.SendPropertyChanged("nomregion");
-					this.OnnomregionChanged();
 				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

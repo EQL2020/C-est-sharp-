@@ -27,17 +27,12 @@ namespace MonAppliWeb.Models
         {
             using (BddClientDataContext dc = new BddClientDataContext())
             {
-                // Récup du client
-                var req = from cli in dc.client where cli.noclient == noCli select cli;
-                client cliBdd = req.FirstOrDefault();
+                var req = from cli in dc.clientregion where cli.noclient == noCli select cli;
+                clientregion cliBdd = req.FirstOrDefault();
                 Nom = cliBdd.nom;
                 NoClient = cliBdd.noclient;
                 Adresse = cliBdd.adresse;
-
-                // Récup de la région
-                var req2 = from reg in dc.region where reg.idregion == cliBdd.noregion select reg;
-                region regionBdd = req2.FirstOrDefault();
-                Region = regionBdd.nomregion;
+                Region = cliBdd.nomregion;
             }
         }
 }
