@@ -14,20 +14,11 @@ namespace MaPremiereFenetre
     {
         public Form1()
         {
+            string[] maSource = { "choix1", "choix2", "choix3" };
             InitializeComponent();
-            label1.Text = "Bonjour";
-            maListeDeroulante.Items.AddRange(new string[] { "choix 1", "choix 2" });
-            maListeDeroulante.SelectedIndex = 0;
+            dataGridView1.DataSource = maSource;
         }
 
-        private void buttonValider_Click(object sender, EventArgs e)
-        {
-            label1.Text = "Au revoir";
-        }
-
-        private void buttonValider_MouseCaptureChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

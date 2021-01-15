@@ -13,6 +13,7 @@ namespace ConsoleTestBDD
     {
         static void Main(string[] args)
         {
+            /*
             AccesBdd testConnexion = new AccesBdd();
       
             string monClient = testConnexion.GetPremierClient();
@@ -32,9 +33,10 @@ namespace ConsoleTestBDD
             //test.EnregistrerModif();
             test.SupprimerEnBase();
             test.LectureDonnees();
-            
-            //AccessBddEF ef = new AccessBddEF();
-            //ef.GetNomAndRegionFromBdd();
+            */
+
+            AccessBddEF ef = new AccessBddEF();
+            ef.GetNomAndRegionFromBdd();
             string entree = Console.ReadLine();
         }
     }
