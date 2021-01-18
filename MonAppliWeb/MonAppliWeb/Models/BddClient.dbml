@@ -8,4 +8,11 @@
       <Column Name="nomregion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.TelephoneSet" Member="TelephoneSet">
+    <Type Name="TelephoneSet">
+      <Column Name="IdTelephone" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NumeroTel" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TypeNumero" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

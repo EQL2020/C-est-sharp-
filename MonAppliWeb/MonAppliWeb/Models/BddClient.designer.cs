@@ -30,6 +30,9 @@ namespace MonAppliWeb.Models
 		
     #region Définitions de méthodes d'extensibilité
     partial void OnCreated();
+    partial void InsertTelephoneSet(TelephoneSet instance);
+    partial void UpdateTelephoneSet(TelephoneSet instance);
+    partial void DeleteTelephoneSet(TelephoneSet instance);
     #endregion
 		
 		public BddClientDataContext() : 
@@ -67,6 +70,14 @@ namespace MonAppliWeb.Models
 			get
 			{
 				return this.GetTable<clientregion>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TelephoneSet> TelephoneSet
+		{
+			get
+			{
+				return this.GetTable<TelephoneSet>();
 			}
 		}
 	}
@@ -148,6 +159,116 @@ namespace MonAppliWeb.Models
 				{
 					this._nomregion = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TelephoneSet")]
+	public partial class TelephoneSet : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdTelephone;
+		
+		private string _NumeroTel;
+		
+		private string _TypeNumero;
+		
+    #region Définitions de méthodes d'extensibilité
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdTelephoneChanging(int value);
+    partial void OnIdTelephoneChanged();
+    partial void OnNumeroTelChanging(string value);
+    partial void OnNumeroTelChanged();
+    partial void OnTypeNumeroChanging(string value);
+    partial void OnTypeNumeroChanged();
+    #endregion
+		
+		public TelephoneSet()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdTelephone", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int IdTelephone
+		{
+			get
+			{
+				return this._IdTelephone;
+			}
+			set
+			{
+				if ((this._IdTelephone != value))
+				{
+					this.OnIdTelephoneChanging(value);
+					this.SendPropertyChanging();
+					this._IdTelephone = value;
+					this.SendPropertyChanged("IdTelephone");
+					this.OnIdTelephoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumeroTel", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string NumeroTel
+		{
+			get
+			{
+				return this._NumeroTel;
+			}
+			set
+			{
+				if ((this._NumeroTel != value))
+				{
+					this.OnNumeroTelChanging(value);
+					this.SendPropertyChanging();
+					this._NumeroTel = value;
+					this.SendPropertyChanged("NumeroTel");
+					this.OnNumeroTelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypeNumero", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string TypeNumero
+		{
+			get
+			{
+				return this._TypeNumero;
+			}
+			set
+			{
+				if ((this._TypeNumero != value))
+				{
+					this.OnTypeNumeroChanging(value);
+					this.SendPropertyChanging();
+					this._TypeNumero = value;
+					this.SendPropertyChanged("TypeNumero");
+					this.OnTypeNumeroChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

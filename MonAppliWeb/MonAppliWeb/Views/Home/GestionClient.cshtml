@@ -1,0 +1,15 @@
+﻿@model MonAppliWeb.Models.Client
+
+@{ 
+    ViewBag.Title = "Gestion CLient";
+    if (String.IsNullOrEmpty(Model.Nom))
+    {
+        Model.Nom = "Client inconnu";
+    }
+}
+
+<h2>GestionClient</h2>
+
+<p>Nom : <input id="NomCli" type="text" value="@Model.Nom" /></p>
+<p>Adresse : <input id="AdrCli" type="text" value="@Model.Adresse" readonly="readonly"/></p>
+<p>Région : <input id="RegCli" type="text" value="@Model.Region" disabled="disabled"/></p>

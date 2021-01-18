@@ -30,10 +30,13 @@ namespace MonAppliWeb.Models
                 // Récupération de la vue "clientregion" : script SQL disponible à la racine du depot GIT ;-)
                 var req = from cli in dc.clientregion where cli.noclient == noCli select cli;
                 clientregion cliBdd = req.FirstOrDefault();
-                Nom = cliBdd.nom;
-                NoClient = cliBdd.noclient;
-                Adresse = cliBdd.adresse;
-                Region = cliBdd.nomregion;
+                if (req.Count() > 0)
+                {
+                    Nom = cliBdd.nom;
+                    NoClient = cliBdd.noclient;
+                    Adresse = cliBdd.adresse;
+                    Region = cliBdd.nomregion;
+                }
             }
         }
 }
