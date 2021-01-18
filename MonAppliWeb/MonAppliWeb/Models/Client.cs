@@ -39,5 +39,18 @@ namespace MonAppliWeb.Models
                 }
             }
         }
-}
+
+        public void EnregistrerModif()
+        {
+            using (BddClientDataContext dc = new BddClientDataContext())
+            {
+                var req = from cli in dc.clientbdd where cli.noclient == this.NoClient select cli;
+                clientbdd cliBdd = req.FirstOrDefault();
+                cliBdd.nom = Nom;
+                cliBdd.adresse = Adresse;
+                //cliBdd.noregion = 0;
+                dc.SubmitChanges();
+            }
+        }
+    }
 }

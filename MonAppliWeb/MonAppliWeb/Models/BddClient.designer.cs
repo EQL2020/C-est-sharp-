@@ -33,6 +33,9 @@ namespace MonAppliWeb.Models
     partial void InsertTelephoneSet(TelephoneSet instance);
     partial void UpdateTelephoneSet(TelephoneSet instance);
     partial void DeleteTelephoneSet(TelephoneSet instance);
+    partial void Insertclientbdd(clientbdd instance);
+    partial void Updateclientbdd(clientbdd instance);
+    partial void Deleteclientbdd(clientbdd instance);
     #endregion
 		
 		public BddClientDataContext() : 
@@ -78,6 +81,14 @@ namespace MonAppliWeb.Models
 			get
 			{
 				return this.GetTable<TelephoneSet>();
+			}
+		}
+		
+		public System.Data.Linq.Table<clientbdd> clientbdd
+		{
+			get
+			{
+				return this.GetTable<clientbdd>();
 			}
 		}
 	}
@@ -248,6 +259,140 @@ namespace MonAppliWeb.Models
 					this._TypeNumero = value;
 					this.SendPropertyChanged("TypeNumero");
 					this.OnTypeNumeroChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.client")]
+	public partial class clientbdd : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _noclient;
+		
+		private string _nom;
+		
+		private string _adresse;
+		
+		private System.Nullable<int> _noregion;
+		
+    #region Définitions de méthodes d'extensibilité
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnnoclientChanging(int value);
+    partial void OnnoclientChanged();
+    partial void OnnomChanging(string value);
+    partial void OnnomChanged();
+    partial void OnadresseChanging(string value);
+    partial void OnadresseChanged();
+    partial void OnnoregionChanging(System.Nullable<int> value);
+    partial void OnnoregionChanged();
+    #endregion
+		
+		public clientbdd()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_noclient", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int noclient
+		{
+			get
+			{
+				return this._noclient;
+			}
+			set
+			{
+				if ((this._noclient != value))
+				{
+					this.OnnoclientChanging(value);
+					this.SendPropertyChanging();
+					this._noclient = value;
+					this.SendPropertyChanged("noclient");
+					this.OnnoclientChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nom", DbType="NVarChar(50)")]
+		public string nom
+		{
+			get
+			{
+				return this._nom;
+			}
+			set
+			{
+				if ((this._nom != value))
+				{
+					this.OnnomChanging(value);
+					this.SendPropertyChanging();
+					this._nom = value;
+					this.SendPropertyChanged("nom");
+					this.OnnomChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_adresse", DbType="NVarChar(50)")]
+		public string adresse
+		{
+			get
+			{
+				return this._adresse;
+			}
+			set
+			{
+				if ((this._adresse != value))
+				{
+					this.OnadresseChanging(value);
+					this.SendPropertyChanging();
+					this._adresse = value;
+					this.SendPropertyChanged("adresse");
+					this.OnadresseChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_noregion", DbType="Int")]
+		public System.Nullable<int> noregion
+		{
+			get
+			{
+				return this._noregion;
+			}
+			set
+			{
+				if ((this._noregion != value))
+				{
+					this.OnnoregionChanging(value);
+					this.SendPropertyChanging();
+					this._noregion = value;
+					this.SendPropertyChanged("noregion");
+					this.OnnoregionChanged();
 				}
 			}
 		}

@@ -42,6 +42,7 @@ namespace MonAppliWeb.Controllers
             return View(monClient);
         }
         */
+        
         public ActionResult GestionClient(string numClient)
         {
             int numCli;
@@ -56,5 +57,5 @@ namespace MonAppliWeb.Controllers
             }
             return View(monClient);
         }
-     }
+    }
 }

@@ -15,4 +15,12 @@
       <Column Name="TypeNumero" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.client" Member="clientbdd">
+    <Type Name="clientbdd">
+      <Column Name="noclient" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="adresse" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="noregion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>
